@@ -5,7 +5,7 @@
 replicaCount: 3
 
 image:
-  repository: <region>.icr.io/<namespace>/todo-<lastname>
+  repository: us.icr.io/dls_namespace/todo-dls
   tag: "1.0"
   pullPolicy: Always
 
@@ -29,11 +29,11 @@ ingress:
     # ingress.bluemix.net/appid-auth: "bindSecret=binding-app-id-20180705 namespace=default requestType=web serviceName=mytodos"
   path: /
   hosts:
-    - todo.<cluster-name>.eu-de.containers.appdomain.cloud
+    - todo.stocktrader-prod.us-south.containers.appdomain.cloud
   tls:
-    - secretName: <cluster-name>
+    - secretName: stocktrader-prod
       hosts:
-        - todo.<cluster-name>.eu-de.containers.appdomain.cloud
+        - todo.stocktrader-prod.us-south.containers.appdomain.cloud
 
 resources:
   # We usually recommend not to specify default resources and to leave this as a conscious
